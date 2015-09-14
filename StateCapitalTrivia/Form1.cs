@@ -34,6 +34,18 @@ namespace StateCapitalTrivia
                 Array.Copy(lines, 6, questionTwo, 0, 6);
                 Array.Copy(lines, 12, questionThree, 0, 6);
                 Array.Copy(lines, 18, questionFour, 0, 6);
+                // answer index variables
+                int answerOne = int.Parse(questionOne[5]);
+                int answerTwo = int.Parse(questionTwo[5]);
+                int answerThree = int.Parse(questionThree[5]);
+                int answerFour = int.Parse(questionFour[5]);
+                // user answer variables
+                int userOne;
+                int userTwo;
+                int userThree;
+                int userFour;
+                // testing if correct answer works as intended
+                textBox1.Text = questionFour[answerFour];
 
                 // testing array copy works as intended for my purposes
                 //foreach (string line in questionFour)
