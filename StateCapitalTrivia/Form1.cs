@@ -26,9 +26,19 @@ namespace StateCapitalTrivia
                 StreamReader inputfile;
                 //inputfile = File.OpenText("stateCapitals.txt");
                 string[] lines = System.IO.File.ReadAllLines("stateCapitals.txt");
-                foreach (string line in lines)
+                string[] questionOne = new string[6];
+                string[] questionTwo = new string[6];
+                string[] questionThree = new string[6];
+                string[] questionFour = new string[6];
+                Array.Copy(lines, 0, questionOne, 0, 6);
+                Array.Copy(lines, 6, questionTwo, 0, 6);
+                Array.Copy(lines, 12, questionThree, 0, 6);
+                Array.Copy(lines, 18, questionFour, 0, 6);
+
+
+                foreach (string line in questionFour)
                 {
-                    // Use a tab to indent each line of the file.
+
                     textBox1.Text += line;
                     textBox1.Text += "\r\n";
 
