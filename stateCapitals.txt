@@ -1,0 +1,24 @@
+Michigan
+Montgomery
+Juneau
+Phoenix
+Lansing
+4
+West Virginia
+Jackson 
+Annapolis 
+Charleston 
+Atlanta 
+3
+Tennessee
+Nashville 
+Trenton 
+Jackson 
+Springfield
+1
+Maryland
+Boston 
+Annapolis 
+Frankfort 
+Providence 
+2
