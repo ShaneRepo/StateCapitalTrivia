@@ -45,6 +45,12 @@ namespace StateCapitalTrivia
                 int userThree;
                 int userFour;
                 int score;
+                // on form load nothing checked
+                radioButton1.Checked = false;
+                radioButton2.Checked = false;
+                radioButton3.Checked = false;
+                radioButton4.Checked = false;
+                // load questions
                 labelState.Text = questionOne[0];
                 radioButton1.Text = questionOne[1];
                 radioButton2.Text = questionOne[2];
