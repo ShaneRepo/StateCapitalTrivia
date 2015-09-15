@@ -37,6 +37,8 @@
             this.labelScore = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +56,7 @@
             // 
             this.labelAnswer.AutoSize = true;
             this.labelAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelAnswer.Location = new System.Drawing.Point(229, 29);
+            this.labelAnswer.Location = new System.Drawing.Point(319, 16);
             this.labelAnswer.Name = "labelAnswer";
             this.labelAnswer.Size = new System.Drawing.Size(66, 15);
             this.labelAnswer.TabIndex = 9;
@@ -103,7 +105,7 @@
             // 
             this.labelScore.AutoSize = true;
             this.labelScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelScore.Location = new System.Drawing.Point(229, 226);
+            this.labelScore.Location = new System.Drawing.Point(326, 226);
             this.labelScore.Name = "labelScore";
             this.labelScore.Size = new System.Drawing.Size(59, 15);
             this.labelScore.TabIndex = 7;
@@ -119,19 +121,39 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Controls.Add(this.labelAnswer);
             this.groupBox1.Controls.Add(this.labelScore);
             this.groupBox1.Controls.Add(this.labelState);
             this.groupBox1.Controls.Add(this.buttonNext);
             this.groupBox1.Controls.Add(this.buttonClear);
             this.groupBox1.Controls.Add(this.buttonSubmit);
-            this.groupBox1.Controls.Add(this.labelAnswer);
-            this.groupBox1.Location = new System.Drawing.Point(12, 92);
+            this.groupBox1.Location = new System.Drawing.Point(12, 73);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(358, 339);
+            this.groupBox1.Size = new System.Drawing.Size(460, 358);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "What is the state capitol of ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(216, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Correct Answer #";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(229, 226);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Current Score:";
             // 
             // Form1
             // 
@@ -161,6 +183,8 @@
         private System.Windows.Forms.Label labelScore;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

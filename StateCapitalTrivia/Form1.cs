@@ -153,7 +153,8 @@ namespace StateCapitalTrivia
                             }
                         default:
                             {
-                                MessageBox.Show("Thanks for playing. Your score is " + (Math.Round(percent, 2).ToString()));
+                                MessageBox.Show("Thanks for playing. Your score is " + 
+                                    (Math.Round(percent, 2).ToString()) + "%");
                                 break;
                             }
                     }
