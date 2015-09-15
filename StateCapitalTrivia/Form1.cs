@@ -17,7 +17,11 @@ namespace StateCapitalTrivia
         {
             InitializeComponent();
         }
-
+        // user answer variables
+        int userAnswer;
+        int score;
+        int count;
+        Boolean proceed = false;  
         private void Form1_Load(object sender, EventArgs e)
         {
             try
@@ -39,23 +43,18 @@ namespace StateCapitalTrivia
                 int answerTwo = int.Parse(questionTwo[5]);
                 int answerThree = int.Parse(questionThree[5]);
                 int answerFour = int.Parse(questionFour[5]);
-                // user answer variables
-                int userOne;
-                int userTwo;
-                int userThree;
-                int userFour;
-                int score;
-                // on form load nothing checked
-                radioButton1.Checked = false;
-                radioButton2.Checked = false;
-                radioButton3.Checked = false;
-                radioButton4.Checked = false;
+                          
                 // load questions
                 labelState.Text = questionOne[0];
-                radioButton1.Text = questionOne[1];
-                radioButton2.Text = questionOne[2];
-                radioButton3.Text = questionOne[3];
-                radioButton4.Text = questionOne[4];
+                listBox1.Items.Add(questionOne[1]);
+                listBox1.Items.Add(questionOne[2]);
+                listBox1.Items.Add(questionOne[3]);
+                listBox1.Items.Add(questionOne[4]);
+
+                //listBox1.Items.Add(answerOne);
+                //listBox1.Items.Add(answerTwo);
+                //listBox1.Items.Add(answerThree);
+                //listBox1.Items.Add(answerFour);
                 
             }
             catch (Exception ex)
@@ -66,13 +65,31 @@ namespace StateCapitalTrivia
             
         }
 
+
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-            radioButton3.Checked = false;
-            radioButton4.Checked = false;
+            listBox1.SelectedIndex = -1;
             labelAnswer.Text = "";
+        }
+
+        private void buttonSubmit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listBox1.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Error!! Select a capitol!");
+                    
+                }
+                else
+                {
+                    userAnswer = listBox1.SelectedIndex;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
