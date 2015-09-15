@@ -44,24 +44,13 @@ namespace StateCapitalTrivia
                 int userTwo;
                 int userThree;
                 int userFour;
-                // testing if correct answer works as intended
-                textBox1.Text = questionFour[answerFour];
-
-                // testing array copy works as intended for my purposes
-                //foreach (string line in questionFour)
-                //{
-
-                //    textBox1.Text += line;
-                //    textBox1.Text += "\r\n";
-
-                //}
-                //while (!inputfile.EndOfStream)
-                //{
-                //    text = inputfile.ReadLine();
-                //    textBox1.Text += text;
-                //    textBox1.Text += "\r\n";
-                //}
-                //inputfile.Close();
+                int score;
+                labelState.Text = questionOne[0];
+                radioButton1.Text = questionOne[1];
+                radioButton2.Text = questionOne[2];
+                radioButton3.Text = questionOne[3];
+                radioButton4.Text = questionOne[4];
+                
             }
             catch (Exception ex)
             {
@@ -69,6 +58,15 @@ namespace StateCapitalTrivia
             }
 
             
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
+            radioButton4.Checked = false;
+            labelAnswer.Text = "";
         }
     }
 }
