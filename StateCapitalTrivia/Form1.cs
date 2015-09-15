@@ -22,18 +22,22 @@ namespace StateCapitalTrivia
         int[] answer = new int[4];
         int score = 0;
         int count = 0;
-        Boolean proceed = false;  
+        double percent = 0;
+        Boolean proceed = false;
+        // read all lines from file and store them in an array
+        string[] lines = System.IO.File.ReadAllLines("stateCapitals.txt");
+        // instantiate an array for each question
+        string[] questionOne = new string[6];
+        string[] questionTwo = new string[6];
+        string[] questionThree = new string[6];
+        string[] questionFour = new string[6];
         private void Form1_Load(object sender, EventArgs e)
         {
+
             try
             {     
-                // read all lines from file and store them in an array
-                string[] lines = System.IO.File.ReadAllLines("stateCapitals.txt");
-                // instantiate an array for each question
-                string[] questionOne = new string[6];
-                string[] questionTwo = new string[6];
-                string[] questionThree = new string[6];
-                string[] questionFour = new string[6];
+                
+                
                 // copy each question into separate arrays
                 Array.Copy(lines, 0, questionOne, 0, 6);
                 Array.Copy(lines, 6, questionTwo, 0, 6);
@@ -79,6 +83,7 @@ namespace StateCapitalTrivia
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
+            proceed = false;
             try
             {
                 if (listBox1.SelectedIndex == -1)
@@ -88,12 +93,70 @@ namespace StateCapitalTrivia
                 }
                 else
                 {
-                    userAnswer[count] = listBox1.SelectedIndex;
+                    userAnswer[count] = listBox1.SelectedIndex + 1;
                     if (userAnswer[count] == answer[count])
                     {
                         score++;
                     }
+                    labelAnswer.Text = answer[count].ToString();
                     count++;
+                    percent = (double)(score * 100) / 4;
+                    labelScore.Text = (Math.Round(percent, 2).ToString());
+                    proceed = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (proceed == false)
+                {
+                    MessageBox.Show("Error!! Answer the question!");
+                }
+                else
+                {
+                    listBox1.Items.Clear();
+                    switch (count)
+                    {
+                        case 1:
+                            {
+                                labelState.Text = questionTwo[0];
+                                listBox1.Items.Add(questionTwo[1]);
+                                listBox1.Items.Add(questionTwo[2]);
+                                listBox1.Items.Add(questionTwo[3]);
+                                listBox1.Items.Add(questionTwo[4]);
+                                break;
+                            }
+                        case 2:
+                            {
+                                labelState.Text = questionThree[0];
+                                listBox1.Items.Add(questionThree[1]);
+                                listBox1.Items.Add(questionThree[2]);
+                                listBox1.Items.Add(questionThree[3]);
+                                listBox1.Items.Add(questionThree[4]);
+                                break;
+                            }
+                        case 3:
+                            {
+                                labelState.Text = questionFour[0];
+                                listBox1.Items.Add(questionFour[1]);
+                                listBox1.Items.Add(questionFour[2]);
+                                listBox1.Items.Add(questionFour[3]);
+                                listBox1.Items.Add(questionFour[4]);
+                                break;
+                            }
+                        default:
+                            {
+                                MessageBox.Show("Thanks for playing. Your score is " + (Math.Round(percent, 2).ToString()));
+                                break;
+                            }
+                    }
                 }
             }
             catch (Exception ex)
