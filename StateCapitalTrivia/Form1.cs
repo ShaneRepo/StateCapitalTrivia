@@ -17,10 +17,11 @@ namespace StateCapitalTrivia
         {
             InitializeComponent();
         }
-        // user answer variables
-        int userAnswer;
-        int score;
-        int count;
+        // user variables/arrays
+        int[] userAnswer = new int[3];
+        int[] answer = new int[3];
+        int score = 0;
+        int count = 0;
         Boolean proceed = false;  
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -43,6 +44,10 @@ namespace StateCapitalTrivia
                 int answerTwo = int.Parse(questionTwo[5]);
                 int answerThree = int.Parse(questionThree[5]);
                 int answerFour = int.Parse(questionFour[5]);
+                answer[0] = answerOne;
+                answer[1] = answerTwo;
+                answer[2] = answerThree;
+                answer[3] = answerFour;
                           
                 // load questions
                 labelState.Text = questionOne[0];
@@ -64,7 +69,7 @@ namespace StateCapitalTrivia
 
             
         }
-
+         
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
@@ -83,7 +88,12 @@ namespace StateCapitalTrivia
                 }
                 else
                 {
-                    userAnswer = listBox1.SelectedIndex;
+                    userAnswer[count] = listBox1.SelectedIndex;
+                    if (userAnswer[count] == answer[count])
+                    {
+                        score++;
+                    }
+                    count++;
                 }
             }
             catch (Exception ex)
