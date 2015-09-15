@@ -18,8 +18,8 @@ namespace StateCapitalTrivia
             InitializeComponent();
         }
         // user variables/arrays
-        int[] userAnswer = new int[3];
-        int[] answer = new int[3];
+        int[] userAnswer = new int[4];
+        int[] answer = new int[4];
         int score = 0;
         int count = 0;
         Boolean proceed = false;  
